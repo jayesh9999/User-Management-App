@@ -54,13 +54,19 @@ class HomeFragment : Fragment() {
             val username = binding.Username.text.toString()
             val email = binding.EmailAddress.text.toString()
             val phone = binding.PhoneNumber.text.toString()
-            val newuser = user(username = username, email = email, phone = phone)
-            GlobalScope.launch {
-                database.dao().addUser((newuser))
-                Handler(Looper.getMainLooper()).post {
-                    Toast.makeText(activity, "User added successfully", Toast.LENGTH_LONG).show()
+            if (isValidUsername(username) && isValidEmail(email) && isValidPhone(phone)){
+                val newuser = user(username = username, email = email, phone = phone)
+                GlobalScope.launch {
+                    database.dao().addUser((newuser))
+                    Handler(Looper.getMainLooper()).post {
+                        Toast.makeText(activity, "User added successfully", Toast.LENGTH_LONG).show()
+                    }
                 }
             }
+            else{
+                Toast.makeText(context,"Enter Valid Details",Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         binding.selectImage.setOnClickListener {
@@ -72,5 +78,15 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    private fun isValidEmail(email: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
 
+    private fun isValidUsername(username: String): Boolean {
+        return username.length >= 6
+    }
+
+    private fun isValidPhone(phone: String): Boolean {
+        return phone.length == 10
+    }
 }
