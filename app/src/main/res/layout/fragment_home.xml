@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4CAF50"
+    tools:context=".HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <EditText
+        android:id="@+id/Username"
+        android:layout_marginLeft="80dp"
+        android:padding="15dp"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedittext"
+        android:ems="10"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:hint="Username" />
+
+    <EditText
+        android:id="@+id/EmailAddress"
+        android:layout_marginLeft="80dp"
+        android:padding="15dp"
+        android:background="@drawable/roundedittext"
+        android:layout_marginTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Email Address"
+        android:textColor="@color/black"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/PhoneNumber"
+        android:layout_marginLeft="80dp"
+        android:background="@drawable/roundedittext"
+        android:padding="15dp"
+        android:layout_marginTop="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:textColor="@color/black"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/submitForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="500dp"
+        android:text="Submit Form" />
+
+    <ImageView
+        android:id="@+id/selectImage"
+        android:layout_width="123dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="400dp"
+        android:src="@drawable/baseline_add_a_photo_24" />
+
+
+</FrameLayout>
